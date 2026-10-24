@@ -50,3 +50,30 @@ function App() {
 }
 
 export default App
+
+/* Ejercicio 2 (usando useFetch)
+import { useFetch } from '../hooks/useFetch';
+
+const URL = "https://api.github.com/users/samueejk-collab"
+
+function traerPerfil() {
+  const { datos: perfil, cargando, error } = useFetch(URL);
+
+  if (cargando) {
+    return <p>Cargando...</p>;
+  }  
+  
+  if (error) {
+    return <p>Error.. {error}</p>;
+  }
+
+  return (
+    <>
+      <img src={perfil.avatar_url} alt={perfil.name} />
+      <h2>{perfil.name}</h2>
+      <h2>{perfil.public_repos}</h2>
+    </>
+  );
+}
+
+export default traerPerfil;*/

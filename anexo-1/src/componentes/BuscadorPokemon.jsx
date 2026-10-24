@@ -59,3 +59,53 @@ function BuscadorPokemon(){
 
 export default BuscadorPokemon
 
+/* Ejercicio 3 usando useFetch
+import { useState } from 'react';
+import { useFetch } from '../hooks/useFetch';
+
+function BuscadorPokemon(){
+    const [buscar, setBuscar] = useState("");
+    const [url, setUrl] = useState(null);
+
+    const { datos, cargando, error } = useFetch(url);
+
+    const buscarPokemon = () => {
+      if (!buscar.trim()) return;
+      setUrl(`https://pokeapi.co/api/v2/pokemon/${buscar.trim()}`);
+    };
+
+    const pokemon = datos ? {
+      nombre: datos.name,
+      imagen: datos.sprites.front_default,
+      tipo: datos.types[0].type.name
+    } : null;
+
+    const errorPokemon = error ? "No se encontro pokemon" : null;
+
+    return (
+      <div>
+        <h2>Buscador de Pokémon</h2>
+        
+        <input 
+          type="text" 
+          placeholder="buscador" 
+          value={buscar}
+          onChange={(e) => setBuscar(e.target.value)}
+        />
+        
+        <button onClick={buscarPokemon}>Buscar</button>
+
+        {errorPokemon && <p>{errorPokemon}</p>}
+
+        {pokemon && (
+          <div>
+            <h3>{pokemon.nombre}</h3>
+            <img src={pokemon.imagen} alt={pokemon.nombre} />
+            <p>Tipo: {pokemon.tipo}</p>
+          </div>
+        )}
+      </div>
+    );
+}
+
+export default BuscadorPokemon;*/
