@@ -2,9 +2,9 @@
 import './App.css'
 import {useState} from "react"
 import { useEffect } from 'react'
+import BuscadorPokemon from './componentes/BuscadorPokemon'
 
 const URL = "https://api.github.com/users/samueejk-collab"
-const URLPokemon = "https://pokeapi.co/api/v2/pokemon/$nombre"
 
 function App() {
   const [datos, setDatos] = useState(null)
@@ -43,6 +43,7 @@ function App() {
     <img src={datos.avatar_url} alt={datos.avatar_url || datos.name} />
     <h2> {datos.name}</h2>
     <h2> {datos.public_repos} </h2>
+    <BuscadorPokemon/>
     </>
   )
 
